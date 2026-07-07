@@ -1,0 +1,132 @@
+[
+  {
+    "date": "2026-07-05",
+    "topic": "GLOBAL DEFENCE",
+    "format": "RANKED_BARS",
+    "generated_at": "2026-07-04T19:15:59.732285Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "INDIA'S DEFENCE",
+    "format": "RANKED_BARS",
+    "generated_at": "2026-07-04T19:18:43.002053Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "INDIA'S DEFENCE",
+    "format": "RANKED_BARS",
+    "generated_at": "2026-07-04T20:00:45.405770Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "INDIA'S NAVAL HELICOPTER",
+    "format": "STATUS_BREAKDOWN",
+    "caption_style": "fact_led",
+    "generated_at": "2026-07-05T03:53:24.868680Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "INDIA'S NAVAL HELICOPTER",
+    "format": "STATUS_BREAKDOWN",
+    "caption_style": "fact_led",
+    "generated_at": "2026-07-05T03:55:53.188344Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "INDIA'S NAVAL HELICOPTER",
+    "format": "STATUS_BREAKDOWN",
+    "caption_style": "fact_led",
+    "generated_at": "2026-07-05T03:57:52.460803Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "5-DAY SSB SELECTION",
+    "format": "timeline",
+    "caption_style": "explainer",
+    "generated_at": "2026-07-05T04:18:36.743736Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "INDIA-FRANCE",
+    "format": "SINGLE_SPOTLIGHT",
+    "caption_style": "question_led",
+    "generated_at": "2026-07-05T04:34:47.706302Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "DRDO BOOSTS AIR DEFENCE",
+    "format": "SINGLE_SPOTLIGHT",
+    "caption_style": "fact_led",
+    "generated_at": "2026-07-05T05:04:07.002838+00:00Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "INDIA-USA Defence Ties",
+    "format": "STATUS_BREAKDOWN",
+    "caption_style": "fact_led",
+    "generated_at": "2026-07-05T05:07:47.522300+00:00Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "INDIA-USA Defence Ties",
+    "format": "STATUS_BREAKDOWN",
+    "caption_style": "fact_led",
+    "generated_at": "2026-07-05T07:15:32.185285+00:00Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "INDIA-USA Defence Ties",
+    "format": "STATUS_BREAKDOWN",
+    "caption_style": "fact_led",
+    "generated_at": "2026-07-05T07:20:27.845510+00:00Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "Defence Card",
+    "format": "STATUS_BREAKDOWN",
+    "caption_style": "explainer",
+    "generated_at": "2026-07-05T07:23:48.479934+00:00Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "Defence Card",
+    "format": "STATUS_BREAKDOWN",
+    "caption_style": "explainer",
+    "generated_at": "2026-07-05T07:53:28.575295+00:00Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "Defence Card",
+    "format": "STATUS_BREAKDOWN",
+    "caption_style": "explainer",
+    "generated_at": "2026-07-05T08:03:31.956411+00:00Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "UNRAVELING THE 200-YEAR-OLD",
+    "format": "SINGLE_SPOTLIGHT",
+    "caption_style": "question_led",
+    "generated_at": "2026-07-05T12:28:49.148277+00:00Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "MARS TRANSIT SHORTCUT",
+    "format": "BEFORE_AFTER",
+    "caption_style": "fact_led",
+    "generated_at": "2026-07-05T18:06:10.576012+00:00Z"
+  },
+  {
+    "date": "2026-07-05",
+    "topic": "AMCA ENGINE DECISION",
+    "format": "SINGLE_SPOTLIGHT",
+    "caption_style": "question_led",
+    "generated_at": "2026-07-05T18:09:01.452737+00:00Z"
+  },
+  {
+    "date": "2026-07-06",
+    "topic": "INDIAN NAVY MH-60R FLEET",
+    "format": "STATUS_BREAKDOWN",
+    "caption_style": "fact_led",
+    "generated_at": "2026-07-06T08:35:23.376904+00:00Z"
+  }
+]

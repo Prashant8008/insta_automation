@@ -1,0 +1,28 @@
+# Sensitive files
+.env
+
+# Python caching
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Executables and logs
+ngrok.exe
+ngrok.log
+
+# Temporary pipeline outputs and layouts
+output/
+assets/card-bg_*
+newscard_*.json
+ssbcard_*.json
+instagram-newscard_*.html
+instagram-ssbcard_*.html
+instagram_posts_*.txt
+instagram_posts_today.txt
+daily_post_plan.json
+
+# IDE settings
+.vscode/
+.idea/

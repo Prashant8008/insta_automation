@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1080px;
+      height: 1080px;
+      font-family: "Arial Black", "Impact", Arial, sans-serif;
+      overflow: hidden;
+      background: #000;
+    }
+    .card {
+      width: 1080px;
+      height: 1080px;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      background: #000;
+      color: #fff;
+      padding: 34px 40px 30px;
+      font-size: 42px;
+      line-height: 1.2;
+      font-weight: 900;
+      text-transform: uppercase;
+      min-height: 170px;
+    }
+    .header .highlight { color: #FACC15; }
+    .image-wrap {
+      position: relative;
+      height: 430px;
+      overflow: hidden;
+      background: #111;
+    }
+    .image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .topic-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #84CC16;
+      color: #000;
+      padding: 8px 18px;
+      font-size: 24px;
+      font-weight: 900;
+      border-radius: 4px;
+    }
+    .brand {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(0,0,0,0.6);
+      color: #84CC16;
+      padding: 8px 14px;
+      font-size: 22px;
+      border-radius: 4px;
+    }
+    .headline-band {
+      background: #FACC15;
+      color: #000;
+      padding: 28px 40px;
+      font-size: 38px;
+      line-height: 1.22;
+      font-weight: 900;
+      min-height: 180px;
+    }
+    .detail {
+      flex: 1;
+      background: #fff;
+      color: #111;
+      padding: 28px 40px 24px;
+      font-size: 30px;
+      line-height: 1.35;
+      font-family: Arial, sans-serif;
+      font-weight: 600;
+    }
+    .detail .highlight { color: #DC2626; font-weight: 900; }
+    .footer {
+      background: #fff;
+      border-top: 2px solid #e5e7eb;
+      padding: 14px 40px 18px;
+      font-size: 22px;
+      color: #64748b;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">{{HEADER_HTML}}</div>
+    <div class="image-wrap">
+      <img src="{{BACKGROUND_IMAGE}}" alt="" />
+      <div class="topic-badge">{{TOPIC}}</div>
+      <div class="brand">@ssb.connect</div>
+    </div>
+    <div class="headline-band">{{HEADLINE}}</div>
+    <div class="detail">{{DETAIL_HTML}}</div>
+    <div class="footer">Follow @ssb.connect for daily SSB prep &amp; defence updates</div>
+  </div>
+</body>
+</html>

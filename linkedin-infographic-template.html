@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSB Connect News Dashboard</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Instrument+Serif:ital@1&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: #020617;
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .card {
+    width: 1080px;
+    height: 1080px;
+    display: flex;
+    flex-direction: column;
+    background: #090D1A;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Photo Frame (Top 45%) */
+  .photo-frame {
+    width: 100%;
+    height: 480px;
+    position: relative;
+    overflow: hidden;
+  }
+  .news-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+  .photo-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, #090D1A);
+  }
+  
+  .badge-overlay {
+    position: absolute;
+    top: 36px;
+    left: 44px;
+    background: #84CC16;
+    color: #020617;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+  }
+
+  .date-overlay {
+    position: absolute;
+    top: 36px;
+    right: 44px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #F8FAFC;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
+    z-index: 10;
+  }
+
+  /* Headline Section (Vibrant Yellow Banner) */
+  .headline-block {
+    margin: -40px 44px 0 44px;
+    background: #FACC15; /* High impact yellow block */
+    color: #0B0F19;
+    padding: 24px 36px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    text-align: center;
+    position: relative;
+    z-index: 15;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .title {
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1.25;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+  }
+  .title span {
+    color: #B45309; /* Darker amber accent */
+    font-style: italic;
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    font-size: 48px;
+    margin-left: 6px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    color: #94A3B8;
+    margin-top: 10px;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  /* News Bullet Points Content Area */
+  .content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px 44px;
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  /* Style Bar-Rows as Bullet Points */
+  .bar-row {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    padding: 16px 24px;
+    gap: 18px;
+  }
+
+  /* Hide progress bar tracks */
+  .bar-track {
+    display: none !important;
+  }
+
+  .bar-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .bar-label {
+    font-size: 21px;
+    font-weight: 700;
+    color: #E2E8F0;
+    line-height: 1.35;
+  }
+  
+  .bar-value {
+    font-size: 20px;
+    font-weight: 900;
+    color: #84CC16;
+    margin-left: auto;
+    background: rgba(132, 204, 22, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .bar-row::before {
+    content: "⚡";
+    font-size: 20px;
+    color: #84CC16;
+  }
+
+  /* Bottom Takeaway Block */
+  .takeaway-box {
+    margin: 0 44px 20px 44px;
+    background: rgba(132, 204, 22, 0.03);
+    border: 1px dashed rgba(132, 204, 22, 0.2);
+    border-radius: 12px;
+    padding: 14px 24px;
+    text-align: center;
+  }
+  .takeaway-text {
+    font-size: 19px;
+    color: #E2E8F0;
+    font-weight: 700;
+  }
+  .takeaway-text span {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    color: #84CC16;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px 44px 28px 44px;
+    background: #050811;
+  }
+  .source {
+    font-size: 13px;
+    color: #64748B;
+    font-family: monospace;
+  }
+  .brand {
+    font-size: 18px;
+    font-weight: 900;
+    color: #84CC16;
+    letter-spacing: -0.3px;
+    text-shadow: 0 0 10px rgba(132, 204, 22, 0.1);
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <!-- Top Photo Frame -->
+  <div class="photo-frame">
+    <div class="badge-overlay">{{BADGE}}</div>
+    <div class="date-overlay">{{DATE_LABEL}}</div>
+    <img id="news-image-element" class="news-image" src="assets/defence_soldiers.png">
+    <div class="photo-gradient"></div>
+  </div>
+  
+  <!-- Title Block Overlay -->
+  <div class="headline-block">
+    <div class="title" id="main-title-element">{{TITLE_MAIN}} <span>{{TITLE_SPAN}}</span></div>
+    <div class="subtitle">{{SUBTITLE}}</div>
+  </div>
+
+  <!-- Bullet points info -->
+  <div class="content-area">
+    {{BAR_ROWS}}
+  </div>
+
+  <!-- Bottom Takeaway -->
+  <div class="takeaway-box">
+    <div class="takeaway-text">Focus: <span>{{TAKEAWAY_NUM}}</span> - {{TAKEAWAY_TEXT}}</div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="source">{{SOURCE}}</div>
+    <div class="brand">@ssb.connect</div>
+  </div>
+</div>
+
+<!-- Dynamic Background Selector Script -->
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const titleText = document.getElementById('main-title-element').innerText.toLowerCase();
+    const imageEl = document.getElementById('news-image-element');
+    
+    if (imageEl) {
+      if (
+        titleText.includes('jet') || 
+        titleText.includes('aircraft') || 
+        titleText.includes('sukhoi') || 
+        titleText.includes('rafale') || 
+        titleText.includes('iaf') || 
+        titleText.includes('tejas') || 
+        titleText.includes('air force')
+      ) {
+        imageEl.src = 'assets/defence_jet.png';
+      } else if (
+        titleText.includes('navy') || 
+        titleText.includes('destroyer') || 
+        titleText.includes('carrier') || 
+        titleText.includes('ship') || 
+        titleText.includes('naval') || 
+        titleText.includes('sea')
+      ) {
+        imageEl.src = 'assets/defence_navy.png';
+      } else if (
+        titleText.includes('drone') || 
+        titleText.includes('uav') || 
+        titleText.includes('unmanned') || 
+        titleText.includes('quadcopter')
+      ) {
+        imageEl.src = 'assets/defence_drone.png';
+      } else if (
+        titleText.includes('tank') || 
+        titleText.includes('t-90') || 
+        titleText.includes('armor') || 
+        titleText.includes('artillery') || 
+        titleText.includes('missile') || 
+        titleText.includes('army')
+      ) {
+        imageEl.src = 'assets/defence_tank.png';
+      } else {
+        imageEl.src = 'assets/defence_soldiers.png';
+      }
+    }
+  });
+</script>
+</body>
+</html>

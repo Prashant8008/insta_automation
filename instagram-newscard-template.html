@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1080px;
+      height: 1080px;
+      font-family: "Arial Black", "Impact", Arial, sans-serif;
+      overflow: hidden;
+      background: #000;
+    }
+    .card {
+      position: relative;
+      width: 1080px;
+      height: 1080px;
+      overflow: hidden;
+    }
+    .bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.15) 0%,
+        rgba(0, 0, 0, 0.25) 45%,
+        rgba(0, 0, 0, 0.88) 100%
+      );
+    }
+    .brand {
+      position: absolute;
+      top: 36px;
+      right: 36px;
+      background: rgba(0, 0, 0, 0.55);
+      color: #84CC16;
+      padding: 10px 18px;
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      border-radius: 6px;
+    }
+    .badge {
+      position: absolute;
+      left: 40px;
+      bottom: 300px;
+      background: #2563eb;
+      color: #fff;
+      padding: 10px 22px;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      border-radius: 4px;
+    }
+    .headline {
+      position: absolute;
+      left: 40px;
+      right: 40px;
+      bottom: 70px;
+      color: #fff;
+      font-size: 50px;
+      line-height: 1.18;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .headline .highlight {
+      color: #FACC15;
+    }
+    .source {
+      position: absolute;
+      left: 40px;
+      bottom: 52px;
+      color: #cbd5e1;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      font-weight: 600;
+    }
+    .footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.92);
+      color: #84CC16;
+      padding: 12px 40px;
+      font-size: 22px;
+      font-family: Arial, sans-serif;
+      font-weight: 800;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="bg" src="{{BACKGROUND_IMAGE}}" alt="" />
+    <div class="scrim"></div>
+    <div class="brand">@ssb.connect</div>
+    <div class="badge">{{BADGE}}</div>
+    <div class="headline">{{HEADLINE_HTML}}</div>
+    <div class="source">{{IMAGE_SOURCE}}</div>
+    <div class="footer">Follow @ssb.connect for daily SSB prep &amp; defence updates</div>
+  </div>
+</body>
+</html>
