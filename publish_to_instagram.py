@@ -197,9 +197,15 @@ def main():
     if args.post is not None:
         indices = [args.post - 1]
 
-    for idx in indices:
+    for post_idx, idx in enumerate(indices):
         if idx < 0 or idx >= len(post_types):
             continue
+
+        # Stagger immediate posts to avoid triggering Instagram's spam filters
+        if post_idx > 0 and args.immediate and not dry_run:
+            stagger_sec = int(os.environ.get("IMMEDIATE_STAGGER_SEC", "300"))
+            print(f"\n[Anti-Spam] Sleeping for {stagger_sec} seconds before processing Post {idx+1}...")
+            time.sleep(stagger_sec)
         ptype = post_types[idx]
         num = idx + 1
         caption = captions.get(num, "")

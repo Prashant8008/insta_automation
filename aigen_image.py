@@ -6,8 +6,17 @@ Returns nonzero on failure."""
 import sys, json, base64, subprocess, urllib.request, os
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-KEY = subprocess.check_output("grep '^GEMINI_API_KEY=' " + os.path.join(BASE, ".env") + " | cut -d'=' -f2",
-                              shell=True).decode().strip()
+
+def _load_gemini_key():
+    env_path = os.path.join(BASE, ".env")
+    if os.path.exists(env_path):
+        with open(env_path, "r", encoding="utf-8", errors="ignore") as f:
+            for line in f:
+                if line.strip().startswith("GEMINI_API_KEY="):
+                    return line.split("=", 1)[1].strip().strip('"').strip("'")
+    return ""
+
+KEY = _load_gemini_key()
 
 BRAND = (" Premium editorial illustration for a LinkedIn carousel. Warm cream background (#F8F7F3). "
          "One muted indigo-purple accent (#5E6AD2). Flat modern vector style, clean geometric shapes, "

@@ -21,6 +21,15 @@ DEFENCE_KEYWORDS = [
     "geopolit", "border", "iaf", "ins ", "drdo", "procurement", "current affairs",
 ]
 
+# Tier 1 sources get priority selection for news cards
+TIER_1_SOURCES = {
+    "SSBCrack",
+    "SSBCrack News",
+    "ThePrint Defence",
+    "PIB Defence",
+    "IDRW Defence",
+}
+
 
 def _load_json(path, default):
     if not os.path.exists(path):
@@ -65,9 +74,6 @@ def _pick_top_news(news_data, news_log, count=MIN_NEWS_CARDS):
     candidates = []
     seen_titles = set()
     for item in news_data:
-        # Only select news from GKToday website
-        if item.get("source") != "GKToday Current Affairs":
-            continue
         title = item.get("title", "").strip()
         norm = _normalize_title(title)
         if not title or norm in seen_titles:
@@ -76,6 +82,10 @@ def _pick_top_news(news_data, news_log, count=MIN_NEWS_CARDS):
         if norm in recent_topics:
             continue
         score = 0
+        source = item.get("source", "")
+        # Tier 1 sources get a large bonus — always preferred
+        if source in TIER_1_SOURCES or item.get("priority", 2) == 1:
+            score += 20
         if _is_defence_relevant(item):
             score += 10
         if item.get("description"):
@@ -84,14 +94,12 @@ def _pick_top_news(news_data, news_log, count=MIN_NEWS_CARDS):
             score += 1
         candidates.append((score, _parse_date(item.get("pubDate", "")), item))
 
+    # Sort by score DESC, then by date DESC
     candidates.sort(key=lambda x: (x[0], x[1]), reverse=True)
-    defence_first = [c for c in candidates if c[0] >= 10]
-    general = [c for c in candidates if c[0] < 10]
-    ordered = defence_first + general
 
     selected = []
     used_norm = set()
-    for _, _, item in ordered:
+    for _, _, item in candidates:
         norm = _normalize_title(item.get("title", ""))
         if norm in used_norm:
             continue

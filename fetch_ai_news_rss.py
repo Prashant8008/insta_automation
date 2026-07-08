@@ -13,20 +13,25 @@ ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
 # List of expanded defence, official, geopolitical, and SSB RSS feeds
+# priority=1 → Tier 1 (preferred sources for news cards)
+# priority=2 → Tier 2 (backup / supplementary sources)
 feeds = [
-    {"source": "IDRW Defence", "url": "https://idrw.org/feed/"},
-    {"source": "PIB Defence", "url": "https://pib.gov.in/Rss/DefenceReleaseRSS.aspx"},
-    {"source": "Indian Defence Review", "url": "https://indiandefencereview.com/feed/"},
-    {"source": "Defence.in", "url": "https://defence.in/feed/"},
-    {"source": "Indian Defence News", "url": "https://www.indiandefensenews.in/feeds/posts/default"},
-    {"source": "Swarajya Defence", "url": "https://swarajyamag.com/feed"},
-    {"source": "StratNews Global", "url": "https://stratnewsglobal.com/feed/"},
-    {"source": "PRS Policy Research", "url": "https://prsindia.org/rss.xml"},
-    {"source": "The Diplomat South Asia", "url": "https://thediplomat.com/regions/south-asia/feed/"},
-    {"source": "ORF", "url": "https://www.orfonline.org/feed/"},
-    {"source": "IADN", "url": "https://iadnews.in/feed/"},
-    {"source": "Gateway House", "url": "https://www.gatewayhouse.in/feed/"},
-    {"source": "SSBCrack", "url": "https://www.ssbcrack.com/feed/"}
+    # ── TIER 1: High-quality, SSB-relevant, frequently updated ──────────────
+    {"source": "SSBCrack",            "url": "https://www.ssbcrack.com/feed/",                       "priority": 1},
+    {"source": "SSBCrack News",       "url": "https://news.ssbcrack.com/indian-defence/feed/",        "priority": 1},
+    {"source": "ThePrint Defence",    "url": "https://theprint.in/category/defence/feed/",            "priority": 1},
+    {"source": "PIB Defence",         "url": "https://pib.gov.in/Rss/DefenceReleaseRSS.aspx",        "priority": 1},
+    {"source": "IDRW Defence",        "url": "https://idrw.org/feed/",                               "priority": 1},
+    # ── TIER 2: Supplementary / geopolitical context ────────────────────────
+    {"source": "Indian Defence Review","url": "https://indiandefencereview.com/feed/",               "priority": 2},
+    {"source": "Defence.in",          "url": "https://defence.in/feed/",                             "priority": 2},
+    {"source": "Indian Defence News", "url": "https://www.indiandefensenews.in/feeds/posts/default", "priority": 2},
+    {"source": "Swarajya Defence",    "url": "https://swarajyamag.com/feed",                         "priority": 2},
+    {"source": "StratNews Global",    "url": "https://stratnewsglobal.com/feed/",                    "priority": 2},
+    {"source": "The Diplomat South Asia", "url": "https://thediplomat.com/regions/south-asia/feed/","priority": 2},
+    {"source": "ORF",                 "url": "https://www.orfonline.org/feed/",                      "priority": 2},
+    {"source": "IADN",                "url": "https://iadnews.in/feed/",                             "priority": 2},
+    {"source": "Gateway House",       "url": "https://www.gatewayhouse.in/feed/",                    "priority": 2},
 ]
 
 headers = {
@@ -167,6 +172,7 @@ for idx, feed in enumerate(feeds):
                     
                 news_item = {
                     "source": feed["source"],
+                    "priority": feed.get("priority", 2),
                     "title": title,
                     "description": desc,
                     "pubDate": pub_date,
