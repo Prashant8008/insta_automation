@@ -174,7 +174,7 @@ def main():
     parser.add_argument(
         "--stagger-minutes",
         type=int,
-        default=15,
+        default=5,
         help="Minutes between each post when using --delay-minutes",
     )
     args = parser.parse_args()

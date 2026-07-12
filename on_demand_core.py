@@ -252,7 +252,7 @@ def build_card_from_pending() -> dict:
     if not run_step("fetch_card_images.py"):
         return {"ok": False, "error": "Background image fetch failed"}
 
-    if not run_node("build_instagram_visuals.cjs"):
+    if not run_step("build_instagram_visuals.py"):
         return {"ok": False, "error": "Card rendering failed"}
 
     ptype = pending.get("post_type", "NewsCard")

@@ -47,7 +47,7 @@ def main():
             ([py, "plan_daily_posts.py"], "Daily Post Planning (3 News + 1 SSB)"),
             ([py, "fetch_card_images.py"], "Card Background Image Fetch"),
             ([py, "generate_instagram_posts.py"], "Caption & Card JSON Generation"),
-            (["node", "build_instagram_visuals.cjs"], "Card HTML Build & PNG Screenshot"),
+            ([py, "build_instagram_visuals.py"], "Card HTML Build & PNG Screenshot"),
             ([py, "update_logs_today.py"], "Update Run Logs"),
         ]
 
@@ -60,7 +60,7 @@ def main():
                 if not run_command(cmd, desc):
                     print("❌ Generation failed. Exiting.")
                     sys.exit(1)
-            elif cmd[-1] == "build_instagram_visuals.cjs":
+            elif cmd[-1] == "build_instagram_visuals.py":
                 if not run_command(cmd, desc):
                     print("❌ Visual rendering failed. Exiting.")
                     sys.exit(1)
