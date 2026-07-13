@@ -249,6 +249,34 @@ def send_card_via_webhook(title, caption, image_path):
     return success
 
 
+def send_slack_text(channel, text):
+    url = "https://slack.com/api/chat.postMessage"
+    headers = {
+        "Authorization": f"Bearer {slack_token}",
+        "Content-Type": "application/json; charset=utf-8",
+    }
+    payload = {
+        "channel": channel,
+        "text": text,
+    }
+    try:
+        req = urllib.request.Request(
+            url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers=headers,
+            method="POST",
+        )
+        with urllib.request.urlopen(req) as res:
+            resp = json.loads(res.read().decode("utf-8"))
+        if resp.get("ok"):
+            print("  [Fallback] Sent text preview to Slack")
+            return True
+        print(f"  [Fallback] Slack text error: {resp.get('error')}")
+    except Exception as e:
+        print(f"  [Fallback] Slack text exception: {e}")
+    return False
+
+
 def main():
     print("Delivering card previews to Slack...")
 
@@ -288,6 +316,10 @@ def main():
         if slack_token and slack_channel:
             comment = f"*{title}*\n\n*Caption:*\n{caption}"
             sent = upload_slack_file(png, title, comment)
+            if not sent:
+                print("  File upload failed, falling back to text preview...")
+                target_channel = slack_channel if (slack_channel and slack_channel != "YOUR_SLACK_CHANNEL_ID") else "#new-channel"
+                sent = send_slack_text(target_channel, comment)
 
         if not sent and webhook_url:
             sent = send_card_via_webhook(title, caption, png)

@@ -58,6 +58,21 @@ if os.path.exists("daily_post_plan.json"):
         print(f"Error loading plan: {e}")
 
 
+def upload_to_catbox(local_path):
+    url = "https://catbox.moe/user/api.php"
+    for attempt in range(1, 4):
+        try:
+            with open(os.path.abspath(local_path), "rb") as f:
+                res = requests.post(url, data={"reqtype": "fileupload"}, files={"fileToUpload": f}, timeout=30)
+            if res.status_code == 200 and res.text.strip().startswith("https://"):
+                return res.text.strip()
+        except Exception as e:
+            print(f"Catbox upload attempt {attempt} failed: {e}")
+        if attempt < 3:
+            time.sleep(5)
+    return None
+
+
 def get_public_url(local_path):
     if dry_run:
         return f"http://localhost:8000/{local_path.lstrip('./')}"
@@ -65,7 +80,13 @@ def get_public_url(local_path):
         url = f"{public_base_url.rstrip('/')}/{local_path.lstrip('./')}"
         print(f"Using public base URL directly: {url}")
         return url
-    print(f"Uploading {local_path} to tmpfiles.org...")
+    
+    print(f"Uploading {local_path} to catbox.moe...")
+    catbox_url = upload_to_catbox(local_path)
+    if catbox_url:
+        return catbox_url
+        
+    print(f"Falling back: Uploading {local_path} to tmpfiles.org...")
     for attempt in range(1, 4):
         try:
             with open(os.path.abspath(local_path), "rb") as f:
@@ -85,6 +106,7 @@ def get_public_url(local_path):
         if attempt < 3:
             time.sleep(5)
     return f"http://localhost:8000/{local_path.lstrip('./')}"
+
 
 
 def extract_caption_for_post(content, num):

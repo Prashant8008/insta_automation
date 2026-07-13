@@ -68,6 +68,15 @@ def _is_defence_relevant(item):
     return any(kw in text for kw in DEFENCE_KEYWORDS)
 
 
+def _are_similar(title1, title2):
+    # Split into words of length > 3
+    words1 = {w for w in re.findall(r"\b\w{4,}\b", (title1 or "").lower())}
+    words2 = {w for w in re.findall(r"\b\w{4,}\b", (title2 or "").lower())}
+    overlap = words1.intersection(words2)
+    # If they share 3 or more significant words, they are similar
+    return len(overlap) >= 3
+
+
 def _pick_top_news(news_data, news_log, count=MIN_NEWS_CARDS):
     recent_topics = {_normalize_title(e.get("topic", "")) for e in news_log[-21:]}
 
@@ -79,8 +88,21 @@ def _pick_top_news(news_data, news_log, count=MIN_NEWS_CARDS):
         if not title or norm in seen_titles:
             continue
         seen_titles.add(norm)
+        
+        # Check direct match
         if norm in recent_topics:
             continue
+            
+        # Check similarity match against logged topics
+        is_recent_similar = False
+        for entry in news_log[-21:]:
+            logged_topic = entry.get("topic", "").strip()
+            if _are_similar(title, logged_topic):
+                is_recent_similar = True
+                break
+        if is_recent_similar:
+            continue
+
         score = 0
         source = item.get("source", "")
         # Tier 1 sources get a large bonus — always preferred
@@ -98,14 +120,20 @@ def _pick_top_news(news_data, news_log, count=MIN_NEWS_CARDS):
     candidates.sort(key=lambda x: (x[0], x[1]), reverse=True)
 
     selected = []
-    used_norm = set()
     for _, _, item in candidates:
-        norm = _normalize_title(item.get("title", ""))
-        if norm in used_norm:
+        title = item.get("title", "").strip()
+        
+        # Check similarity against already selected items in this batch
+        is_duplicate = False
+        for sel in selected:
+            if _are_similar(title, sel["title"]):
+                is_duplicate = True
+                break
+        if is_duplicate:
             continue
-        used_norm.add(norm)
+
         selected.append({
-            "title": item.get("title", ""),
+            "title": title,
             "description": item.get("description", ""),
             "url": item.get("url", ""),
             "source": item.get("source", "News"),
@@ -114,16 +142,27 @@ def _pick_top_news(news_data, news_log, count=MIN_NEWS_CARDS):
         if len(selected) >= count:
             break
 
-    # If not enough fresh defence news, fill with most recent regardless of log
+    # If not enough fresh defence news, fill with most recent regardless of log/similarity
     if len(selected) < count:
         for item in news_data:
             title = item.get("title", "").strip()
             norm = _normalize_title(title)
-            if not title or norm in used_norm:
+            
+            # Check direct match
+            if not title or norm in [ _normalize_title(s["title"]) for s in selected ]:
                 continue
-            used_norm.add(norm)
+                
+            # Check similarity against current selection
+            is_duplicate = False
+            for sel in selected:
+                if _are_similar(title, sel["title"]):
+                    is_duplicate = True
+                    break
+            if is_duplicate:
+                continue
+
             selected.append({
-                "title": item.get("title", ""),
+                "title": title,
                 "description": item.get("description", ""),
                 "url": item.get("url", ""),
                 "source": item.get("source", "News"),
