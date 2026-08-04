@@ -77,7 +77,7 @@ def _are_similar(title1, title2):
     return len(overlap) >= 3
 
 
-def _pick_top_news(news_data, news_log, count=MIN_NEWS_CARDS):
+def _pick_top_news(news_data, news_log, count=MIN_NEWS_CARDS, strict_new_only=False):
     recent_topics = {_normalize_title(e.get("topic", "")) for e in news_log[-21:]}
 
     candidates = []
@@ -142,6 +142,10 @@ def _pick_top_news(news_data, news_log, count=MIN_NEWS_CARDS):
         if len(selected) >= count:
             break
 
+    # If strict_new_only is True (e.g. evening check), never fallback to old/already logged news
+    if strict_new_only:
+        return selected
+
     # If not enough fresh defence news, fill with most recent regardless of log/similarity
     if len(selected) < count:
         for item in news_data:
@@ -182,12 +186,27 @@ def _pick_ssb_topic(ssb_log):
     return SSB_TOPICS[len(ssb_log) % len(SSB_TOPICS)]
 
 
-def build_plan():
+def build_plan(require_new=False):
+    import sys
     news_data = _load_json(NEWS_PATH, [])
     news_log = _load_json(NEWS_LOG_PATH, [])
     ssb_log = _load_json(SSB_LOG_PATH, [])
 
-    news_assignments = _pick_top_news(news_data, news_log, MIN_NEWS_CARDS)
+    news_assignments = _pick_top_news(news_data, news_log, MIN_NEWS_CARDS, strict_new_only=require_new)
+    
+    if require_new and len(news_assignments) == 0:
+        empty_plan = {
+            "num_posts": 0,
+            "post_types": [],
+            "news_assignments": [],
+            "has_new_content": False,
+            "reasoning": "No fresh updates found since last run."
+        }
+        with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+            json.dump(empty_plan, f, indent=2)
+        print("[plan_daily_posts] ℹ️ No fresh defence/current affairs news found since last run.")
+        sys.exit(2)
+
     ssb_topic = _pick_ssb_topic(ssb_log)
 
     post_types = ["NewsCard"] * len(news_assignments) + ["SSBCard"]
@@ -196,6 +215,7 @@ def build_plan():
         "post_types": post_types,
         "news_assignments": news_assignments,
         "ssb_topic": ssb_topic,
+        "has_new_content": True,
         "reasoning": (
             f"Selected {len(news_assignments)} GKToday news cards from {len(news_data)} feed items."
         ),
@@ -210,4 +230,8 @@ def build_plan():
 
 
 if __name__ == "__main__":
-    build_plan()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--require-new", action="store_true", help="Only plan if fresh/unposted news is found")
+    args = parser.parse_args()
+    build_plan(require_new=args.require_new)

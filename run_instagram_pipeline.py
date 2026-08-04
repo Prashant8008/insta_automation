@@ -31,6 +31,11 @@ def main():
         action="store_true",
         help="Post to Instagram immediately (skip 1-hour delay)",
     )
+    parser.add_argument(
+        "--require-new",
+        action="store_true",
+        help="Check if there is new news since last run; exit cleanly if nothing new",
+    )
     args = parser.parse_args()
 
     run_all = not args.generate and not args.publish
@@ -41,10 +46,14 @@ def main():
     print("🚀 STARTING INSTAGRAM CARD PIPELINE (3 News + 1 SSB) 🚀")
 
     if run_all or args.generate:
+        plan_cmd = [py, "plan_daily_posts.py"]
+        if args.require_new:
+            plan_cmd.append("--require-new")
+
         steps = [
             ([py, "fetch_ai_news_rss.py"], "Defence & Current Affairs RSS Fetch"),
             ([py, "fetch_additional_sources.py"], "Additional News Sources"),
-            ([py, "plan_daily_posts.py"], "Daily Post Planning (3 News + 1 SSB)"),
+            (plan_cmd, "Daily Post Planning (3 News + 1 SSB)"),
             ([py, "fetch_card_images.py"], "Card Background Image Fetch"),
             ([py, "generate_instagram_posts.py"], "Caption & Card JSON Generation"),
             ([py, "build_instagram_visuals.py"], "Card HTML Build & PNG Screenshot"),
@@ -52,20 +61,31 @@ def main():
         ]
 
         for cmd, desc in steps:
-            script = cmd[-1]
+            script = cmd[1] if len(cmd) > 1 and cmd[0] == py else cmd[-1]
             if not os.path.exists(script):
                 print(f"Skipping missing script: {script}")
                 continue
-            if cmd[-1] == "generate_instagram_posts.py":
-                if not run_command(cmd, desc):
-                    print("❌ Generation failed. Exiting.")
+
+            print(f"\n{'=' * 50}")
+            print(f"▶ Running: {desc}...")
+            print(f"Command: {' '.join(cmd)}")
+            print(f"{'=' * 50}")
+
+            res = subprocess.run(cmd, cwd=PIPELINE_DIR)
+            if "plan_daily_posts.py" in cmd:
+                if res.returncode == 2:
+                    print(f"\n{'=' * 50}")
+                    print("ℹ️ No new/breaking news found since earlier run today.")
+                    print("Pipeline shutting down cleanly without posting.")
+                    print(f"{'=' * 50}\n")
+                    sys.exit(0)
+                elif res.returncode != 0:
+                    print(f"❌ Error in post planning. Exiting.")
                     sys.exit(1)
-            elif cmd[-1] == "build_instagram_visuals.py":
-                if not run_command(cmd, desc):
-                    print("❌ Visual rendering failed. Exiting.")
+            elif cmd[-1] in ("generate_instagram_posts.py", "build_instagram_visuals.py"):
+                if res.returncode != 0:
+                    print(f"❌ {desc} failed. Exiting.")
                     sys.exit(1)
-            else:
-                run_command(cmd, desc)
 
         print("\n▶ Starting HTTP server on port 8000 for Slack previews...")
         server_process = subprocess.Popen([py, "-m", "http.server", "8000"], cwd=PIPELINE_DIR)

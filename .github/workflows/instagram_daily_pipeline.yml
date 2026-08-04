@@ -2,10 +2,16 @@ name: Daily Instagram Post Pipeline
 
 on:
   schedule:
-    # Runs daily at 03:30 UTC (9:00 AM IST)
+    # Morning Run: Daily at 03:30 UTC (9:00 AM IST) - standard daily batch
     - cron: '30 3 * * *'
+    # Evening Run: Daily at 13:30 UTC (7:00 PM IST) - checks for new/breaking news only
+    - cron: '30 13 * * *'
   workflow_dispatch:
     inputs:
+      require_new:
+        description: 'Check for new news only (shut down if nothing new)'
+        type: boolean
+        default: false
       immediate:
         description: 'Post to Instagram immediately (skip 1-hour delay)'
         type: boolean
@@ -64,6 +70,9 @@ jobs:
           if [ "${{ github.event.inputs.generate_only }}" = "true" ]; then
             echo "Running generation + Slack preview only..."
             python run_instagram_pipeline.py --generate
+          elif [ "${{ github.event.inputs.require_new }}" = "true" ] || [ "${{ github.event.schedule }}" = "30 13 * * *" ]; then
+            echo "Running Evening Check: checking for fresh/breaking news since earlier run..."
+            python run_instagram_pipeline.py --require-new
           elif [ "${{ github.event.inputs.immediate }}" = "true" ]; then
             echo "Running pipeline with immediate Instagram publishing..."
             python run_instagram_pipeline.py --immediate
