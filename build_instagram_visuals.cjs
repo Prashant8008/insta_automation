@@ -1,4 +1,13 @@
-const puppeteer = require('./carousel-routine/node_modules/puppeteer');
+let puppeteer;
+try {
+  puppeteer = require('puppeteer');
+} catch (e) {
+  try {
+    puppeteer = require('./carousel-routine/node_modules/puppeteer');
+  } catch (err) {
+    throw new Error('Puppeteer not found. Please install puppeteer via npm install puppeteer');
+  }
+}
 const fs = require('fs');
 const path = require('path');
 const http = require('http');

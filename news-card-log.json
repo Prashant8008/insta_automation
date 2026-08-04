@@ -16,21 +16,6 @@
   },
   {
     "date": "2026-07-07",
-    "topic": "DEFENCE HISTORY",
-    "post_num": 1
-  },
-  {
-    "date": "2026-07-07",
-    "topic": "DEFENCE PRODUCTION",
-    "post_num": 2
-  },
-  {
-    "date": "2026-07-07",
-    "topic": "GLOBAL DEFENCE",
-    "post_num": 3
-  },
-  {
-    "date": "2026-07-07",
     "topic": "Military Recognition",
     "post_num": 1
   },
@@ -102,6 +87,66 @@
   {
     "date": "2026-07-07",
     "topic": "International Affairs",
+    "post_num": 3
+  },
+  {
+    "date": "2026-07-16",
+    "topic": "Defence",
+    "post_num": 1
+  },
+  {
+    "date": "2026-07-16",
+    "topic": "Youth Leadership",
+    "post_num": 2
+  },
+  {
+    "date": "2026-07-16",
+    "topic": "DEFENCE COMMISSION",
+    "post_num": 3
+  },
+  {
+    "date": "2026-07-25",
+    "topic": "Defence Update",
+    "post_num": 1
+  },
+  {
+    "date": "2026-07-25",
+    "topic": "Indian Navy",
+    "post_num": 2
+  },
+  {
+    "date": "2026-07-25",
+    "topic": "MILITARY ACHIEVEMENTS",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-03",
+    "topic": "DEFENCE NEWS",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-03",
+    "topic": "Defence Technology",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-03",
+    "topic": "Defence",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-04",
+    "topic": "DEFENCE HONORS",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-04",
+    "topic": "Defence Cooperation",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-04",
+    "topic": "Defence",
     "post_num": 3
   }
 ]

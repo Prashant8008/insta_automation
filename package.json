@@ -1,0 +1,12 @@
+{
+  "name": "daily-instagram-posts-pipeline",
+  "version": "1.0.0",
+  "description": "Daily Instagram Posts Automation Pipeline",
+  "main": "build_instagram_visuals.cjs",
+  "scripts": {
+    "build:visuals": "node build_instagram_visuals.cjs"
+  },
+  "dependencies": {
+    "puppeteer": "^22.12.1"
+  }
+}
