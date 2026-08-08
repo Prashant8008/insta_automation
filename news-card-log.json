@@ -1,21 +1,6 @@
 [
   {
     "date": "2026-07-07",
-    "topic": "DEFENCE HISTORY",
-    "post_num": 1
-  },
-  {
-    "date": "2026-07-07",
-    "topic": "DEFENCE PRODUCTION",
-    "post_num": 2
-  },
-  {
-    "date": "2026-07-07",
-    "topic": "GLOBAL DEFENCE",
-    "post_num": 3
-  },
-  {
-    "date": "2026-07-07",
     "topic": "Military Recognition",
     "post_num": 1
   },
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-04",
     "topic": "Defence",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-08",
+    "topic": "Defence Tech",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-08",
+    "topic": "Defence Economics",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-08",
+    "topic": "Air Defence",
     "post_num": 3
   }
 ]
