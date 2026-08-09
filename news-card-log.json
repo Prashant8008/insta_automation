@@ -1,21 +1,6 @@
 [
   {
     "date": "2026-07-07",
-    "topic": "International Affairs",
-    "post_num": 1
-  },
-  {
-    "date": "2026-07-07",
-    "topic": "Defence",
-    "post_num": 2
-  },
-  {
-    "date": "2026-07-07",
-    "topic": "World Current Affairs",
-    "post_num": 3
-  },
-  {
-    "date": "2026-07-07",
     "topic": "Military Recognition",
     "post_num": 1
   },
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-08",
     "topic": "Defence",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-09",
+    "topic": "Defence Espionage",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-09",
+    "topic": "Defence Proposal",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-09",
+    "topic": "Air Combat Strategy",
     "post_num": 3
   }
 ]
