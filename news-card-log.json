@@ -6,21 +6,6 @@
   },
   {
     "date": "2026-07-07",
-    "topic": "Defence",
-    "post_num": 2
-  },
-  {
-    "date": "2026-07-07",
-    "topic": "DEFENCE",
-    "post_num": 3
-  },
-  {
-    "date": "2026-07-07",
-    "topic": "Military History",
-    "post_num": 1
-  },
-  {
-    "date": "2026-07-07",
     "topic": "Defence Industry",
     "post_num": 2
   },
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-09",
     "topic": "MILITARY STRATEGY",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-10",
+    "topic": "DEFENCE",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-10",
+    "topic": "NAVAL DEFENCE",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-10",
+    "topic": "Defence",
     "post_num": 3
   }
 ]
