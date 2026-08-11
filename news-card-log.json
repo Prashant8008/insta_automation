@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-25",
-    "topic": "Defence Update",
-    "post_num": 1
-  },
-  {
-    "date": "2026-07-25",
-    "topic": "Indian Navy",
-    "post_num": 2
-  },
-  {
-    "date": "2026-07-25",
-    "topic": "MILITARY ACHIEVEMENTS",
-    "post_num": 3
-  },
-  {
     "date": "2026-08-03",
     "topic": "DEFENCE NEWS",
     "post_num": 1
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-11",
     "topic": "DEFENCE ACQUISITION",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-11",
+    "topic": "Military Preparedness",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-11",
+    "topic": "Indian Navy",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-11",
+    "topic": "NATIONAL SECURITY",
     "post_num": 3
   }
 ]
