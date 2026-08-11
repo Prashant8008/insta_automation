@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-16",
-    "topic": "Defence",
-    "post_num": 1
-  },
-  {
-    "date": "2026-07-16",
-    "topic": "Youth Leadership",
-    "post_num": 2
-  },
-  {
-    "date": "2026-07-16",
-    "topic": "DEFENCE COMMISSION",
-    "post_num": 3
-  },
-  {
     "date": "2026-07-25",
     "topic": "Defence Update",
     "post_num": 1
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-10",
     "topic": "AIR DEFENCE",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-11",
+    "topic": "Defence Strategy",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-11",
+    "topic": "Defence Education",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-11",
+    "topic": "DEFENCE ACQUISITION",
     "post_num": 3
   }
 ]
