@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-04",
-    "topic": "DEFENCE HONORS",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-04",
-    "topic": "Defence Cooperation",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-04",
-    "topic": "Defence",
-    "post_num": 3
-  },
-  {
     "date": "2026-08-08",
     "topic": "Defence Tech",
     "post_num": 1
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-12",
     "topic": "DEFENCE",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-12",
+    "topic": "Defence Update",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-12",
+    "topic": "Military Law Training",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-12",
+    "topic": "DEFENCE WELFARE",
     "post_num": 3
   }
 ]
