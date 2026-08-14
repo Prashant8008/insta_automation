@@ -1,21 +1,6 @@
 [
   {
     "date": "2026-08-09",
-    "topic": "Defence Espionage",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-09",
-    "topic": "Defence Proposal",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-09",
-    "topic": "Air Combat Strategy",
-    "post_num": 3
-  },
-  {
-    "date": "2026-08-09",
     "topic": "Defence Education",
     "post_num": 1
   },
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-13",
     "topic": "IAF Trainer Requirement",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-14",
+    "topic": "DEFENCE TECHNOLOGY",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-14",
+    "topic": "Naval Acquisition",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-14",
+    "topic": "Defence",
     "post_num": 3
   }
 ]
