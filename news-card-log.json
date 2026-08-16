@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-11",
-    "topic": "Military Preparedness",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-11",
-    "topic": "Indian Navy",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-11",
-    "topic": "NATIONAL SECURITY",
-    "post_num": 3
-  },
-  {
     "date": "2026-08-12",
     "topic": "DEFENCE MEDICAL",
     "post_num": 1
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-16",
     "topic": "Defence Exports",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-16",
+    "topic": "Defence Cooperation",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-16",
+    "topic": "Defence",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-16",
+    "topic": "Defence Tech",
     "post_num": 3
   }
 ]
