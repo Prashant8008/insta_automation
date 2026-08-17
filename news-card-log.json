@@ -1,21 +1,6 @@
 [
   {
     "date": "2026-08-12",
-    "topic": "DEFENCE MEDICAL",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-12",
-    "topic": "MILITARY UPDATES",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-12",
-    "topic": "DEFENCE",
-    "post_num": 3
-  },
-  {
-    "date": "2026-08-12",
     "topic": "Defence Update",
     "post_num": 1
   },
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-16",
     "topic": "Defence Tech",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-17",
+    "topic": "Defence Acquisition",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-17",
+    "topic": "MILITARY RELATIONS",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-17",
+    "topic": "DEFENCE",
     "post_num": 3
   }
 ]
