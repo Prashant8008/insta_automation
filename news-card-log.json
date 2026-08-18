@@ -1,21 +1,6 @@
 [
   {
     "date": "2026-08-13",
-    "topic": "DEFENCE NEWS",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-13",
-    "topic": "IAF Jet Trainers",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-13",
-    "topic": "Naval Defence",
-    "post_num": 3
-  },
-  {
-    "date": "2026-08-13",
     "topic": "IAF",
     "post_num": 1
   },
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-17",
     "topic": "Defence Intelligence",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-18",
+    "topic": "Defence Exports",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-18",
+    "topic": "Naval Upgrade",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-18",
+    "topic": "Air Defence",
     "post_num": 3
   }
 ]
