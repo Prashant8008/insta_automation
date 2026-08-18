@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-13",
-    "topic": "IAF",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-13",
-    "topic": "DEFENCE TECHNOLOGY",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-13",
-    "topic": "IAF Trainer Requirement",
-    "post_num": 3
-  },
-  {
     "date": "2026-08-14",
     "topic": "DEFENCE TECHNOLOGY",
     "post_num": 1
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-18",
     "topic": "Air Defence",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-18",
+    "topic": "Defence Diplomacy",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-18",
+    "topic": "Military Visits",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-18",
+    "topic": "Gallantry",
     "post_num": 3
   }
 ]
