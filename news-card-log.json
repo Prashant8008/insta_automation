@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-14",
-    "topic": "DEFENCE SPORTS",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-14",
-    "topic": "IAF Honors",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-14",
-    "topic": "Defence Relations",
-    "post_num": 3
-  },
-  {
     "date": "2026-08-15",
     "topic": "Defence",
     "post_num": 1
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-19",
     "topic": "Defence Exports",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-19",
+    "topic": "Military Training",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-19",
+    "topic": "Defence",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-19",
+    "topic": "DEFENCE",
     "post_num": 3
   }
 ]
