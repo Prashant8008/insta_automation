@@ -1,21 +1,6 @@
 [
   {
     "date": "2026-08-14",
-    "topic": "DEFENCE TECHNOLOGY",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-14",
-    "topic": "Naval Acquisition",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-14",
-    "topic": "Defence",
-    "post_num": 3
-  },
-  {
-    "date": "2026-08-14",
     "topic": "DEFENCE SPORTS",
     "post_num": 1
   },
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-18",
     "topic": "Gallantry",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-19",
+    "topic": "Sports Victory",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-19",
+    "topic": "Family Welfare",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-19",
+    "topic": "Defence Exports",
     "post_num": 3
   }
 ]
