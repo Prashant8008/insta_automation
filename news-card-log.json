@@ -1,21 +1,6 @@
 [
   {
     "date": "2026-08-18",
-    "topic": "Defence Exports",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-18",
-    "topic": "Naval Upgrade",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-18",
-    "topic": "Air Defence",
-    "post_num": 3
-  },
-  {
-    "date": "2026-08-18",
     "topic": "Defence Diplomacy",
     "post_num": 1
   },
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-23",
     "topic": "Defence Technology",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-23",
+    "topic": "Armed Forces Fraud",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-23",
+    "topic": "DEFENCE INITIATIVE",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-23",
+    "topic": "INDIAN NAVY",
     "post_num": 3
   }
 ]
