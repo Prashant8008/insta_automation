@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-18",
-    "topic": "Defence Diplomacy",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-18",
-    "topic": "Military Visits",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-18",
-    "topic": "Gallantry",
-    "post_num": 3
-  },
-  {
     "date": "2026-08-19",
     "topic": "Sports Victory",
     "post_num": 1
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-23",
     "topic": "INDIAN NAVY",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-24",
+    "topic": "IAF Update",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-24",
+    "topic": "Defence Analysis",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-24",
+    "topic": "DEFENCE",
     "post_num": 3
   }
 ]
