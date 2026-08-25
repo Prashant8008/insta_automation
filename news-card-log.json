@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-20",
-    "topic": "Defence AI",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-20",
-    "topic": "Maritime Security",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-20",
-    "topic": "DEFENCE AVIONICS",
-    "post_num": 3
-  },
-  {
     "date": "2026-08-21",
     "topic": "Defence Innovation",
     "post_num": 1
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-25",
     "topic": "Defence Deal",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-25",
+    "topic": "NAVAL DEFENCE",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-25",
+    "topic": "Defence Infrastructure",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-25",
+    "topic": "Defence News",
     "post_num": 3
   }
 ]
