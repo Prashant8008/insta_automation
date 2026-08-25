@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-19",
-    "topic": "Military Training",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-19",
-    "topic": "Defence",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-19",
-    "topic": "DEFENCE",
-    "post_num": 3
-  },
-  {
     "date": "2026-08-20",
     "topic": "Defence AI",
     "post_num": 1
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-24",
     "topic": "Defence Update",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-25",
+    "topic": "Defence Diplomacy",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-25",
+    "topic": "Defence Update",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-25",
+    "topic": "Defence Deal",
     "post_num": 3
   }
 ]
