@@ -1,21 +1,6 @@
 [
   {
     "date": "2026-08-22",
-    "topic": "Defense Strategy",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-22",
-    "topic": "Naval Technology",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-22",
-    "topic": "Defence Tech",
-    "post_num": 3
-  },
-  {
-    "date": "2026-08-22",
     "topic": "Defence Sports",
     "post_num": 1
   },
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-26",
     "topic": "Defence Logistics",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-27",
+    "topic": "Defence & Community",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-27",
+    "topic": "MILITARY HONORS",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-27",
+    "topic": "DEFENCE UPDATE",
     "post_num": 3
   }
 ]
