@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-24",
-    "topic": "International Relations",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-24",
-    "topic": "Defence Aviation",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-24",
-    "topic": "Defence Update",
-    "post_num": 3
-  },
-  {
     "date": "2026-08-25",
     "topic": "Defence Diplomacy",
     "post_num": 1
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-29",
     "topic": "Military News",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-29",
+    "topic": "Aerospace & Defence",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-29",
+    "topic": "Defence Update",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-29",
+    "topic": "Defence Tech",
     "post_num": 3
   }
 ]
