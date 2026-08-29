@@ -1,21 +1,6 @@
 [
   {
     "date": "2026-08-24",
-    "topic": "IAF Update",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-24",
-    "topic": "Defence Analysis",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-24",
-    "topic": "DEFENCE",
-    "post_num": 3
-  },
-  {
-    "date": "2026-08-24",
     "topic": "International Relations",
     "post_num": 1
   },
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-28",
     "topic": "Defence Reforms",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-29",
+    "topic": "National Security",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-29",
+    "topic": "Military Justice",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-29",
+    "topic": "Military News",
     "post_num": 3
   }
 ]
