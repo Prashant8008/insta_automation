@@ -1,21 +1,6 @@
 [
   {
     "date": "2026-08-25",
-    "topic": "Defence Diplomacy",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-25",
-    "topic": "Defence Update",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-25",
-    "topic": "Defence Deal",
-    "post_num": 3
-  },
-  {
-    "date": "2026-08-25",
     "topic": "NAVAL DEFENCE",
     "post_num": 1
   },
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-29",
     "topic": "Defence Tech",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-30",
+    "topic": "Naval Delivery",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-30",
+    "topic": "Defence & Environment",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-30",
+    "topic": "Indian Air Force",
     "post_num": 3
   }
 ]
