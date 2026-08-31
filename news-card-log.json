@@ -1,21 +1,6 @@
 [
   {
     "date": "2026-08-26",
-    "topic": "DEFENCE",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-26",
-    "topic": "DEFENCE",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-26",
-    "topic": "Defence Update",
-    "post_num": 3
-  },
-  {
-    "date": "2026-08-26",
     "topic": "DEFENCE TECH",
     "post_num": 1
   },
@@ -147,6 +132,21 @@
   {
     "date": "2026-08-30",
     "topic": "DEFENCE TECHNOLOGY",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-31",
+    "topic": "INDIAN ARMY",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-31",
+    "topic": "Defence",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-31",
+    "topic": "Defence Appointment",
     "post_num": 3
   }
 ]
