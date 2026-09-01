@@ -1,22 +1,97 @@
 [
   {
-    "date": "2026-08-26",
-    "topic": "DEFENCE TECH",
+    "date": "2026-08-10",
+    "topic": "DEFENCE NEWS",
     "post_num": 1
   },
   {
-    "date": "2026-08-26",
-    "topic": "Defence Update",
+    "date": "2026-08-10",
+    "topic": "Defence & Aerospace",
     "post_num": 2
   },
   {
-    "date": "2026-08-26",
-    "topic": "Defence Logistics",
+    "date": "2026-08-10",
+    "topic": "Defence Tech",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-13",
+    "topic": "IAF",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-13",
+    "topic": "DEFENCE TECHNOLOGY",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-13",
+    "topic": "IAF Trainer Jets",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-14",
+    "topic": "DEFENCE PROCUREMENT",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-14",
+    "topic": "Gallantry Awards",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-14",
+    "topic": "MILITARY EDUCATION",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-18",
+    "topic": "DEFENCE DIPLOMACY",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-18",
+    "topic": "Defence Training",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-18",
+    "topic": "Defence",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-21",
+    "topic": "Defence",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-21",
+    "topic": "Defence",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-21",
+    "topic": "International Defence",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-22",
+    "topic": "DEFENCE SCAM",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-22",
+    "topic": "DEFENCE SPORTS",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-22",
+    "topic": "Military Innovation",
     "post_num": 3
   },
   {
     "date": "2026-08-27",
-    "topic": "Defence & Community",
+    "topic": "Community & Defence",
     "post_num": 1
   },
   {
@@ -26,27 +101,12 @@
   },
   {
     "date": "2026-08-27",
-    "topic": "DEFENCE UPDATE",
-    "post_num": 3
-  },
-  {
-    "date": "2026-08-27",
-    "topic": "Raksha Bandhan",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-27",
-    "topic": "MILITARY HISTORY",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-27",
-    "topic": "DEFENCE UPGRADE",
+    "topic": "Indian Army",
     "post_num": 3
   },
   {
     "date": "2026-08-28",
-    "topic": "DEFENCE MANUFACTURING",
+    "topic": "Defence Orders",
     "post_num": 1
   },
   {
@@ -56,97 +116,58 @@
   },
   {
     "date": "2026-08-28",
-    "topic": "Defence",
-    "post_num": 3
-  },
-  {
-    "date": "2026-08-28",
-    "topic": "Defence Cooperation",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-28",
-    "topic": "Defence Deal",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-28",
-    "topic": "Defence Reforms",
+    "topic": "Naval Aviation",
     "post_num": 3
   },
   {
     "date": "2026-08-29",
-    "topic": "National Security",
+    "topic": "DEFENCE TECH",
     "post_num": 1
   },
   {
     "date": "2026-08-29",
-    "topic": "Military Justice",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-29",
-    "topic": "Military News",
-    "post_num": 3
-  },
-  {
-    "date": "2026-08-29",
-    "topic": "Aerospace & Defence",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-29",
-    "topic": "Defence Update",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-29",
-    "topic": "Defence Tech",
-    "post_num": 3
-  },
-  {
-    "date": "2026-08-30",
-    "topic": "Naval Delivery",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-30",
-    "topic": "Defence & Environment",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-30",
-    "topic": "Indian Air Force",
-    "post_num": 3
-  },
-  {
-    "date": "2026-08-30",
-    "topic": "Defence Acquisition",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-30",
-    "topic": "Defence Training",
-    "post_num": 2
-  },
-  {
-    "date": "2026-08-30",
     "topic": "DEFENCE TECHNOLOGY",
-    "post_num": 3
-  },
-  {
-    "date": "2026-08-31",
-    "topic": "INDIAN ARMY",
-    "post_num": 1
-  },
-  {
-    "date": "2026-08-31",
-    "topic": "Defence",
     "post_num": 2
   },
   {
-    "date": "2026-08-31",
-    "topic": "Defence Appointment",
+    "date": "2026-08-29",
+    "topic": "DEFENCE",
+    "post_num": 3
+  },
+  {
+    "date": "2026-08-29",
+    "topic": "Space Technology",
+    "post_num": 1
+  },
+  {
+    "date": "2026-08-29",
+    "topic": "DEFENCE",
+    "post_num": 2
+  },
+  {
+    "date": "2026-08-29",
+    "topic": "DEFENCE UPDATE",
+    "post_num": 3
+  },
+  {
+    "date": "2026-09-01",
+    "topic": "PUNE-BASED TECHNOGTREON DEVELOPS INDIGENOUS RUBBERIZED ANTI-SKID TRACKS FOR INDIA\u2019S T-90 AND T-72 TANKS",
+    "headline": "PUNE-BASED TECHNOGTREON DEVELOPS INDIGENOUS RUBBERIZED ANTI-SKID TRACKS FOR INDIA\u2019S T-90 AND T-72 TANKS",
+    "url": "https://idrw.org/pune-based-technotreon-develops-indigenous-rubberized-anti-skid-tracks-for-indias-t-90-and-t-72-tanks/",
+    "post_num": 1
+  },
+  {
+    "date": "2026-09-01",
+    "topic": "INDIAN NAVY GETS INDIGENOUS REMOTE-CONTROLLED TARGET BOAT",
+    "headline": "INDIAN NAVY GETS INDIGENOUS REMOTE-CONTROLLED TARGET BOAT",
+    "url": "https://idrw.org/indian-navy-gets-indigenous-remote-controlled-target-boat/",
+    "post_num": 2
+  },
+  {
+    "date": "2026-09-01",
+    "topic": "RAKSHA MANTRI TO CONDUCT ANNUAL PERFORMANCE REVIEW OF 16 DEFENCE PSUs IN NEW DELHI",
+    "headline": "RAKSHA MANTRI TO CONDUCT ANNUAL PERFORMANCE REVIEW OF 16 DEFENCE PSUs IN NEW DELHI",
+    "url": "https://idrw.org/raksha-mantri-to-undertake-annual-performance-review-of-16-dpsus-in-new-delhi/",
     "post_num": 3
   }
 ]

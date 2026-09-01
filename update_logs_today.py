@@ -18,27 +18,44 @@ for idx, ptype in enumerate(post_types):
     num = idx + 1
     if ptype == "NewsCard":
         data_path = f"newscard_{num}.json"
-        topic = "Defence News"
+        headline = ""
+        topic = ""
+        url = ""
+        assignments = plan.get("news_assignments", [])
+        if news_idx < len(assignments):
+            topic = assignments[news_idx].get("title", "")
+            url = assignments[news_idx].get("url", "")
+
         try:
             if os.path.exists(data_path):
                 with open(data_path, encoding="utf-8") as f:
                     card = json.load(f)
-                topic = card.get("topic") or card.get("headline", topic)
+                headline = card.get("headline", "")
+                url = card.get("article_url", url)
+                if headline:
+                    topic = headline
         except Exception:
-            assignments = plan.get("news_assignments", [])
-            if news_idx < len(assignments):
-                topic = assignments[news_idx].get("title", topic)
+            pass
         news_idx += 1
 
         log_path = "news-card-log.json"
         try:
-            with open(log_path, encoding="utf-8") as f:
-                log = json.load(f)
+            if os.path.exists(log_path):
+                with open(log_path, encoding="utf-8") as f:
+                    log = json.load(f)
+            else:
+                log = []
         except Exception:
             log = []
-        log.append({"date": datetime.date.today().isoformat(), "topic": topic, "post_num": num})
+        log.append({
+            "date": datetime.date.today().isoformat(),
+            "topic": topic,
+            "headline": headline,
+            "url": url,
+            "post_num": num
+        })
         with open(log_path, "w", encoding="utf-8") as f:
-            json.dump(log[-30:], f, indent=2)
+            json.dump(log[-60:], f, indent=2)
         print(f"News card log updated: {topic[:60]}")
 
     elif ptype == "SSBCard":

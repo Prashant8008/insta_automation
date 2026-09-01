@@ -2,22 +2,22 @@ name: Daily Instagram Post Pipeline
 
 on:
   schedule:
-    # Morning Run: Daily at 03:30 UTC (9:00 AM IST) - standard daily batch
-    - cron: '30 3 * * *'
-    # Evening Run: Daily at 13:30 UTC (7:00 PM IST) - checks for new/breaking news only
-    - cron: '30 13 * * *'
+    # Morning Run: Daily at 02:00 UTC (7:30 AM IST) - standard daily batch
+    - cron: '0 2 * * *'
+    # Evening Run: Daily at 13:00 UTC (6:30 PM IST) - checks for breaking news / evening batch
+    - cron: '0 13 * * *'
   workflow_dispatch:
     inputs:
       require_new:
-        description: 'Check for new news only (shut down if nothing new)'
+        description: 'Check for new news only (shut down cleanly if nothing new)'
         type: boolean
         default: false
       immediate:
-        description: 'Post to Instagram immediately (skip 1-hour delay)'
+        description: 'Post to Instagram immediately (5-min interval)'
         type: boolean
-        default: false
+        default: true
       generate_only:
-        description: 'Generate & Slack preview only (skip Instagram publishing)'
+        description: 'Generate Reels and Cards only (skip Instagram publishing)'
         type: boolean
         default: false
 
@@ -35,16 +35,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.11
+      - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
           cache: 'pip'
 
-      - name: Set up Node.js 24
+      - name: Set up Node.js 20
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '20'
+
+      - name: Install System Dependencies (FFmpeg & Fonts)
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg fonts-dejavu-core fonts-liberation
 
       - name: Install Python dependencies
         run: |
@@ -61,23 +66,21 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           FACEBOOK_ACCESS_TOKEN: ${{ secrets.FACEBOOK_ACCESS_TOKEN }}
           INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          REEL_VOICE: ${{ secrets.REEL_VOICE || 'en-IN-NeerjaExpressiveNeural' }}
           DRY_RUN: ${{ vars.DRY_RUN || secrets.DRY_RUN || 'false' }}
           PYTHONIOENCODING: utf-8
         run: |
           if [ "${{ github.event.inputs.generate_only }}" = "true" ]; then
-            echo "Running generation + Slack preview only..."
+            echo "Running generation only..."
             python run_instagram_pipeline.py --generate
-          elif [ "${{ github.event.inputs.require_new }}" = "true" ] || [ "${{ github.event.schedule }}" = "30 13 * * *" ]; then
-            echo "Running Evening Check: checking for fresh/breaking news since earlier run..."
-            python run_instagram_pipeline.py --require-new
-          elif [ "${{ github.event.inputs.immediate }}" = "true" ]; then
-            echo "Running pipeline with immediate Instagram publishing..."
-            python run_instagram_pipeline.py --immediate
+          elif [ "${{ github.event.inputs.require_new }}" = "true" ]; then
+            echo "Running check: checking for fresh/breaking news since earlier run..."
+            python run_instagram_pipeline.py --require-new --immediate
           else
-            echo "Running standard daily pipeline..."
-            python run_instagram_pipeline.py
+            echo "Running standard daily pipeline (immediate 5-min interval)..."
+            python run_instagram_pipeline.py --immediate
           fi
 
       - name: Commit and push updated run logs
@@ -85,10 +88,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add news-card-log.json ssb-topic-log.json ai_news_data.json pending_on_demand.json web_search_result.json 2>/dev/null || true
+          git add news-card-log.json ssb-topic-log.json ai_news_data.json web_search_result.json 2>/dev/null || true
           if ! git diff --staged --quiet; then
             git commit -m "chore(logs): update run logs and topic history [skip ci]"
             git push
           else
             echo "No log changes to commit."
           fi
+

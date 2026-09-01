@@ -5,7 +5,13 @@ Plans daily Instagram output: 3 latest news cards + 1 SSB prep card.
 import json
 import os
 import re
+import sys
 from datetime import datetime
+
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 NEWS_PATH = "ai_news_data.json"
 NEWS_LOG_PATH = "news-card-log.json"
@@ -78,26 +84,40 @@ def _are_similar(title1, title2):
 
 
 def _pick_top_news(news_data, news_log, count=MIN_NEWS_CARDS, strict_new_only=False):
-    recent_topics = {_normalize_title(e.get("topic", "")) for e in news_log[-21:]}
+    recent_topics = set()
+    recent_urls = set()
+    for e in news_log[-40:]:
+        if e.get("topic"):
+            recent_topics.add(_normalize_title(e["topic"]))
+        if e.get("headline"):
+            recent_topics.add(_normalize_title(e["headline"]))
+        if e.get("url"):
+            recent_urls.add(e["url"].strip().lower())
 
     candidates = []
     seen_titles = set()
     for item in news_data:
         title = item.get("title", "").strip()
+        url = (item.get("url") or "").strip().lower()
         norm = _normalize_title(title)
         if not title or norm in seen_titles:
             continue
         seen_titles.add(norm)
         
-        # Check direct match
+        # Check direct URL match
+        if url and url in recent_urls:
+            continue
+
+        # Check direct topic/headline match
         if norm in recent_topics:
             continue
             
-        # Check similarity match against logged topics
+        # Check similarity match against logged topics and headlines
         is_recent_similar = False
-        for entry in news_log[-21:]:
+        for entry in news_log[-40:]:
             logged_topic = entry.get("topic", "").strip()
-            if _are_similar(title, logged_topic):
+            logged_headline = entry.get("headline", "").strip()
+            if _are_similar(title, logged_topic) or _are_similar(title, logged_headline):
                 is_recent_similar = True
                 break
         if is_recent_similar:

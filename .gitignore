@@ -8,12 +8,19 @@ __pycache__/
 *.pyd
 .pytest_cache/
 
+# Node dependencies
+node_modules/
+package-lock.json
+
 # Executables and logs
 ngrok.exe
 ngrok.log
+*.log
 
-# Temporary pipeline outputs and layouts
+# Temporary pipeline outputs, assets and layouts
 output/
+temp_reel/
+temp_*.*
 assets/card-bg_*
 newscard_*.json
 ssbcard_*.json
@@ -22,7 +29,11 @@ instagram-ssbcard_*.html
 instagram_posts_*.txt
 instagram_posts_today.txt
 daily_post_plan.json
+test_dummy.txt
+test_raw.txt
 
-# IDE settings
+# IDE & System
 .vscode/
 .idea/
+.system_generated/
+*.crdownload

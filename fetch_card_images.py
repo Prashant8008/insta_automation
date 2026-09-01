@@ -7,8 +7,14 @@ import json
 import os
 import re
 import ssl
+import sys
 import urllib.request
 from html.parser import HTMLParser
+
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 ctx = ssl.create_default_context()
 ctx.check_hostname = False
